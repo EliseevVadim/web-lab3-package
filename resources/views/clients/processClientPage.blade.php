@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('lab3.abstract-shop-package.layouts.app')
 
 @section('title')
     {{isset($client) ? "Редактировать информацию о клиенте" : "Добавить клиента"}}

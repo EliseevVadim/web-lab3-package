@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('lab3.abstract-shop-package.layouts.app')
 
 @section('title')
     {{isset($product) ? "Редактировать информацию о товаре" : "Добавить товар"}}
