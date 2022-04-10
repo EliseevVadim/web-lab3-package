@@ -14,7 +14,7 @@ class AbstractShopPackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/AbstractShopPackage.php', 'abstract-shop-package');
+        $this->mergeConfigFrom(__DIR__ . '/../config/abstract-shop-package.php', 'abstract-shop-package');
         $this->publishConfig();
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'abstract-shop-package');
         $this->publishes([
