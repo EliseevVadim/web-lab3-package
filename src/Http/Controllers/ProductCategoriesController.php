@@ -12,7 +12,7 @@ class ProductCategoriesController extends Controller
     public function loadAllProductsCategories()
     {
         $categories = ProductCategory::all();
-        return view('productCategories.allCategories', compact('categories'));
+        return view('lab3.abstract-shop-package.productCategories.allCategories', compact('categories'));
     }
 
     public function loadProductCategoryById($id)
@@ -23,7 +23,7 @@ class ProductCategoriesController extends Controller
 
     public function openProductCategoryAdding()
     {
-        return view('productCategories.processProductCategory');
+        return view('lab3.abstract-shop-package.productCategories.processProductCategory');
     }
 
     public function addProductCategory(Request $request)
@@ -44,7 +44,7 @@ class ProductCategoriesController extends Controller
     {
         $category = ProductCategory::find($id);
         if (!is_null($category))
-            return view('productCategories.processProductCategory', compact('category'));
+            return view('lab3.abstract-shop-package.productCategories.processProductCategory', compact('category'));
         die("Категория не найдена.");
     }
 

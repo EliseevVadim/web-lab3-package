@@ -14,7 +14,7 @@ class OrdersController extends Controller
     public function loadAllOrders()
     {
         $orders = Order::all();
-        return view('orders.allOrders', compact('orders'));
+        return view('lab3.abstract-shop-package.orders.allOrders', compact('orders'));
     }
 
     public function loadOrderById($id)
@@ -27,7 +27,7 @@ class OrdersController extends Controller
     {
         $clients = Client::all();
         $products = Product::all();
-        return view('orders.processOrder', compact('clients', 'products'));
+        return view('lab3.abstract-shop-package.orders.processOrder', compact('clients', 'products'));
     }
 
     public function addOrder(Request $request)
@@ -57,7 +57,7 @@ class OrdersController extends Controller
         $clients = Client::all();
         $products = Product::all();
         if (!is_null($order))
-            return view('orders.processOrder', compact('order', 'clients', 'products'));
+            return view('lab3.abstract-shop-package.orders.processOrder', compact('order', 'clients', 'products'));
         die("Товар не найден.");
     }
 

@@ -12,7 +12,7 @@ class ClientsController extends Controller
     public function loadAllClients()
     {
         $clients = Client::all();
-        return view('clients.allClientsPage', compact('clients'));
+        return view('lab3.abstract-shop-package.clients.allClientsPage', compact('clients'));
     }
 
     public function loadClientById($id)
@@ -23,7 +23,7 @@ class ClientsController extends Controller
 
     public function openClientAdding()
     {
-        return view('clients.processClientPage');
+        return view('lab3.abstract-shop-package.clients.processClientPage');
     }
 
     public function addClient(Request $request)
@@ -48,7 +48,7 @@ class ClientsController extends Controller
     {
         $client = Client::find($id);
         if (!is_null($client))
-            return view('clients.processClientPage', compact('client'));
+            return view('lab3.abstract-shop-package.clients.processClientPage', compact('client'));
         die("Клиент не найден.");
     }
 

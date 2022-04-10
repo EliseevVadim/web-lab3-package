@@ -12,7 +12,7 @@ class ProvidersController extends Controller
     public function loadAllProviders()
     {
         $providers = Provider::all();
-        return view('providers.allProvidersPage', compact('providers'));
+        return view('lab3.abstract-shop-package.providers.allProvidersPage', compact('providers'));
     }
 
     public function loadProviderById($id)
@@ -23,7 +23,7 @@ class ProvidersController extends Controller
 
     public function openProviderAdding()
     {
-        return view('providers.processProviderPage');
+        return view('lab3.abstract-shop-package.providers.processProviderPage');
     }
 
     public function addProvider(Request $request)
@@ -50,7 +50,7 @@ class ProvidersController extends Controller
     {
         $provider = Provider::find($id);
         if (!is_null($provider))
-            return view('providers.processProviderPage', compact('provider'));
+            return view('lab3.abstract-shop-package.providers.processProviderPage', compact('provider'));
         die("Поставщик не найден.");
     }
 

@@ -16,7 +16,7 @@ class ProductsController extends Controller
     public function loadAllProducts()
     {
         $products = Product::all();
-        return view('products.allProductsPage', compact('products'));
+        return view('lab3.abstract-shop-package.products.allProductsPage', compact('products'));
     }
 
     public function loadProductById($id)
@@ -30,7 +30,7 @@ class ProductsController extends Controller
         $categories = ProductCategory::all();
         $storages = ProductStorage::all();
         $providers = Provider::all();
-        return view('products.processProductPage', compact('categories', 'storages', 'providers'));
+        return view('lab3.abstract-shop-package.products.processProductPage', compact('categories', 'storages', 'providers'));
     }
 
     public function addProduct(Request $request)
@@ -64,7 +64,7 @@ class ProductsController extends Controller
         $storages = ProductStorage::all();
         $providers = Provider::all();
         if (!is_null($product))
-            return view('products.processProductPage', compact('product', 'categories', 'storages', 'providers'));
+            return view('lab3.abstract-shop-package.products.processProductPage', compact('product', 'categories', 'storages', 'providers'));
         die("Товар не найден.");
     }
 

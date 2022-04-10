@@ -13,7 +13,7 @@ class ProductStoragesController extends Controller
     public function loadAllProductsStorages()
     {
         $storages = ProductStorage::all();
-        return view('productStorages.allStoragesPage', compact('storages'));
+        return view('lab3.abstract-shop-package.productStorages.allStoragesPage', compact('storages'));
     }
 
     public function loadProductStorageById($id)
@@ -25,7 +25,7 @@ class ProductStoragesController extends Controller
     public function openProductStorageAdding()
     {
         $providers = Provider::query()->select('id', 'provider_name')->get();
-        return view('productStorages.processStoragePage', compact('providers'));
+        return view('lab3.abstract-shop-package.productStorages.processStoragePage', compact('providers'));
     }
 
     public function addProductStorage(Request $request)
@@ -51,7 +51,7 @@ class ProductStoragesController extends Controller
         $storage = ProductStorage::find($id);
         $providers = Provider::query()->select('id', 'provider_name')->get();
         if (!is_null($storage))
-            return view('productStorages.processStoragePage', compact('storage', 'providers'));
+            return view('lab3.abstract-shop-package.productStorages.processStoragePage', compact('storage', 'providers'));
         die("Склад не найден.");
     }
 
