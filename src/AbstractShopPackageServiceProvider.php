@@ -25,6 +25,7 @@ class AbstractShopPackageServiceProvider extends ServiceProvider
         ]);
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->registerRoutes();
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 
     /**
