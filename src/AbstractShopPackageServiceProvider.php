@@ -24,7 +24,6 @@ class AbstractShopPackageServiceProvider extends ServiceProvider
             __DIR__ . '/../tests/Unit' => base_path()
         ]);
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->registerRoutes();
     }
 
@@ -49,8 +48,8 @@ class AbstractShopPackageServiceProvider extends ServiceProvider
     {
         return [
             'namespace'  => "Lab3\AbstractShopPackage\Http\Controllers",
-            'middleware' => 'api',
-            'prefix'     => 'api'
+            'middleware' => 'web',
+            'prefix'     => 'web'
         ];
     }
 
