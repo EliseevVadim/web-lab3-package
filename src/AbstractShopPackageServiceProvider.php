@@ -21,9 +21,10 @@ class AbstractShopPackageServiceProvider extends ServiceProvider
             __DIR__ . '/../resources/views' => resource_path('views/lab3/abstract-shop-package'),
             __DIR__ . '/../database/factories' => database_path('factories/'),
             __DIR__ . '/../database/seeders' => database_path('seeders/'),
-            __DIR__ . '/../tests/Unit' => base_path('tests/Unit/')
+            __DIR__ . '/../tests/Unit' => base_path()
         ]);
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->registerRoutes();
     }
 
