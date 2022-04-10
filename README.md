@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # abstract-shop-package
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -40,6 +39,3 @@ If you discover any security-related issues, please email eliseevv02@mail.ru ins
 ## License
 
 The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.
-=======
-# web-lab3-package
->>>>>>> be46495 (Initial commit)
