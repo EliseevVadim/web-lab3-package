@@ -20,8 +20,8 @@ class AbstractShopPackageServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../resources/views' => resource_path('views/lab3/abstract-shop-package'),
             __DIR__ . '/../database/factories' => database_path('factories/'),
-            __DIR__ . '/../database/seeds' => database_path('seeders/'),
-            __DIR__ . '/../tests/Unit' => base_path('tests/Unit')
+            __DIR__ . '/../database/seeders' => database_path('seeders/'),
+            __DIR__ . '/../tests/Unit' => base_path('tests/Unit/')
         ]);
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->registerRoutes();
@@ -76,7 +76,6 @@ class AbstractShopPackageServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/abstract-shop-package.php' => config_path('abstract-shop-package.php'),
-                __DIR__ . '/../config/geophence.php' => config_path('geophence.php'),
             ], 'config');
         }
     }
