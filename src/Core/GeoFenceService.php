@@ -1,6 +1,6 @@
 <?php
 
-namespace Lab3\AbstractShopPackage\GeoServices;
+namespace Lab3\AbstractShopPackage\Core;
 
 use Salman\GeoFence\Service\GeoFenceCalculator;
 

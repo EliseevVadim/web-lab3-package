@@ -1,6 +1,6 @@
 <?php
 
-namespace Lab3\AbstractShopPackage;
+namespace Lab3\AbstractShopPackage\Core;
 
 use Illuminate\Support\ServiceProvider;
 
