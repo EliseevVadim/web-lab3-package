@@ -1,0 +1,68 @@
+{
+    "name": "lab3/abstract-shop-package",
+    "description": "Your Package Description here",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+		"shop",
+		"package",
+		"laravel"
+	],
+    "authors": [
+        {
+            "name": "Vadim Eliseev",
+            "email": "eliseevv02@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable":true,
+    "require": {
+        "amrshawky/laravel-currency": "*",
+        "bodunde/geocoder": "^1.2",
+        "salmanzafar/laravel-geo-fence": "^1.0"
+    },
+    "require-dev": {
+        "symfony/thanks": "^1.0",
+        "phpunit/phpunit": "^7.4@dev",
+        "mockery/mockery": "^1.0@dev",
+        "orchestra/testbench": "^3.8@dev",
+        "orchestra/database": "^3.8@dev",
+        "illuminate/support": "^5.8@dev",
+        "fzaninotto/faker": "^1.9@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lab3\\AbstractShopPackage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lab3\\AbstractShopPackage\\Tests\\":"tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/thanks": true
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lab3\\AbstractShopPackage\\AbstractShopPackageServiceProvider",
+                "Lab3\\AbstractShopPackage\\Core\\CurrenciesConverterServiceProvider",
+                "Lab3\\AbstractShopPackage\\Core\\DeliveryCostCalculatorServiceProvider"
+            ],
+            "aliases": {
+                "Lab3": "Lab3\\AbstractShopPackage\\AbstractShopPackageFacade",
+                "CurrenciesConverter" : "Lab3\\AbstractShopPackage\\Core\\CurrenciesConverterFacade",
+                "DeliveryCostCalculator" : "Lab3\\AbstractShopPackage\\Core\\DeliveryCostCalculatorFacade"
+            }
+        }
+    }
+}
