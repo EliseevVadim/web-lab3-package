@@ -4,9 +4,9 @@ namespace Lab3\AbstractShopPackage\Core;
 
 use Carbon\Exceptions\InvalidFormatException;
 use Illuminate\Support\Facades\Config;
-use Lab3\AbstractShopPackage\GeoServices\GeocoderService;
-use Lab3\AbstractShopPackage\GeoServices\GeoFenceService;
-use Lab3\AbstractShopPackage\GeoServices\MathematicalGeoService;
+use Lab3\AbstractShopPackage\Core\GeoCalculatorService;
+use Lab3\AbstractShopPackage\Core\GeoFenceService;
+use Lab3\AbstractShopPackage\Core\MathematicalGeoService;
 
 class DeliveryCostCalculator
 {
@@ -23,7 +23,7 @@ class DeliveryCostCalculator
                 $geoService = new MathematicalGeoService();
                 break;
             case "geocoder":
-                $geoService = new GeocoderService();
+                $geoService = new GeoCalculatorService();
                 break;
             case "geofence":
                 $geoService = new GeoFenceService();
