@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lab3\\AbstractShopPackage\\Tests\\":"tests/"
+            "Lab3\\AbstractShopPackage\\Tests\\": "src/tests/"
         }
     },
     "config": {
