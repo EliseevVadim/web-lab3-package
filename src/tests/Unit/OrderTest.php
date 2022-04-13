@@ -50,7 +50,7 @@ class OrderTest extends TestCase
 
     public function testOrderEditingPageOpening()
     {
-        $orderId = Order::all()->random()->id;
+        $orderId = Order::factory()->create()->id;
         $response = $this->get('/openOrderEditing/'.$orderId);
         $response->assertStatus(200)
             ->assertSee('Редактировать информацию о заказе')
@@ -59,7 +59,7 @@ class OrderTest extends TestCase
 
     public function testCanUpdateOrder()
     {
-        $orderForEditing = Order::all()->random();
+        $orderForEditing = Order::factory()->create();
         $orderForEditing->quantity = 316;
         $this->putJson(route('order.update'), $orderForEditing->toArray())
             ->assertStatus(302);

@@ -44,7 +44,7 @@ class ProductTest extends TestCase
 
     public function testProductEditingPageOpening()
     {
-        $productId = Product::all()->random()->id;
+        $productId = Product::factory()->create()->id;
         $response = $this->get('/openProductEditing/'.$productId);
         $response->assertStatus(200)
             ->assertSee('Редактировать информацию о товаре')
@@ -53,7 +53,7 @@ class ProductTest extends TestCase
 
     public function testCanUpdateProduct()
     {
-        $productForEditing = Product::all()->random();
+        $productForEditing = Product::factory()->create();
         $productForEditing->product_name = uniqid();
         $productForEditing->image_path = null;
         $this->putJson(route('product.update'), $productForEditing->toArray())

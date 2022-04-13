@@ -51,7 +51,7 @@ class ClientTest extends TestCase
 
     public function testClientEditingPageOpening()
     {
-        $clientId = Client::all()->random()->id;
+        $clientId = Client::factory()->create()->id;
         $response = $this->get('/openClientEditing/'.$clientId);
         $response->assertStatus(200)
             ->assertSee('Редактировать информацию о клиенте')
@@ -60,7 +60,7 @@ class ClientTest extends TestCase
 
     public function testCanUpdateClient()
     {
-        $clientForEditing = Client::all()->random();
+        $clientForEditing = Client::factory()->create();
         $clientForEditing->client_full_name = uniqid();
         $this->putJson(route('client.update'), $clientForEditing->toArray())
             ->assertStatus(302);

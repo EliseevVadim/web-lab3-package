@@ -51,7 +51,7 @@ class ProductStorageTest extends TestCase
 
     public function testProductStorageEditingPageOpening()
     {
-        $storageId = ProductStorage::all()->random()->id;
+        $storageId = ProductStorage::factory()->create()->id;
         $response = $this->get('/openProductStorageEditing/'.$storageId);
         $response->assertStatus(200)
             ->assertSee('Редактировать информацию о складе')

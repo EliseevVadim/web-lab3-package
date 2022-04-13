@@ -47,7 +47,7 @@ class ProductCategoryTest extends TestCase
 
     public function testProductCategoryEditingPageOpening()
     {
-        $categoryId = ProductCategory::all()->random()->id;
+        $categoryId = ProductCategory::factory()->create()->id;
         $response = $this->get('/openProductCategoryEditing/'.$categoryId);
         $response->assertStatus(200)
             ->assertSee('Редактировать информацию о категории товаров')
@@ -56,7 +56,7 @@ class ProductCategoryTest extends TestCase
 
     public function testCanUpdateProductCategory()
     {
-        $categoryForEditing = ProductCategory::all()->random();
+        $categoryForEditing = ProductCategory::factory()->create();
         $categoryForEditing->category_name = uniqid();
         $this->putJson(route('productCategory.update'), $categoryForEditing->toArray())
             ->assertStatus(302);

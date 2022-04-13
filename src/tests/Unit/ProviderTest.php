@@ -53,7 +53,7 @@ class ProviderTest extends TestCase
 
     public function testProviderEditingPageOpening()
     {
-        $providerId = Provider::all()->random()->id;
+        $providerId = Provider::factory()->create()->id;
         $response = $this->get('/openProviderEditing/'.$providerId);
         $response->assertStatus(200)
             ->assertSee('Редактировать информацию о поставщике')
@@ -62,7 +62,7 @@ class ProviderTest extends TestCase
 
     public function testCanUpdateProvider()
     {
-        $providerForEditing = Provider::all()->random();
+        $providerForEditing = Provider::factory()->create();
         $providerForEditing->provider_name = uniqid();
         $this->putJson(route('provider.update'), $providerForEditing->toArray())
             ->assertStatus(302);
