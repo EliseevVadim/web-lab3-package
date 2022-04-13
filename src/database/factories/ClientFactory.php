@@ -24,7 +24,7 @@ class ClientFactory extends Factory
     {
         return [
             'client_full_name' => $this->faker->name,
-            'INN' => $this->faker->unique()->numerify('**********'),
+            'INN' => $this->faker->unique()->numerify('##########'),
             'address' => $this->faker->address,
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->unique()->phoneNumber

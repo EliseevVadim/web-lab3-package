@@ -33,7 +33,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Lab3\\AbstractShopPackage\\": "src/"
+            "Lab3\\AbstractShopPackage\\": "src/",
+            "Lab3\\AbstractShopPackage\\Database\\Factories\\": "src/database/factories"
         }
     },
     "autoload-dev": {
